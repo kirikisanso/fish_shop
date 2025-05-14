@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин для рыбалки</title>
+    <meta name="description" content="Рыболовный интернет-магазин">
+    <meta name="keywords" content="рыбалка, снасти, удочки">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Магазин для рыбалки</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Поиск товаров...">
+            <button id="searchButton">Поиск</button>
+        </div>
+        <button id="openCart">🛒 <span id="cartCount">0</span></button>
+    </div>
+</header>
+
+<main class="container">
+    <section id="filters" class="filters">
+        <h3>Фильтр товаров</h3>
+        <label>Цена от: <input type="number" id="minPrice"></label>
+        <label>до: <input type="number" id="maxPrice"></label>
+        <select id="categoryFilter">
+            <option value="">Все категории</option>
+            <option value="удочки">Удочки</option>
+            <option value="катушки">Катушки</option>
+            <option value="приманки">Приманки</option>
+        </select>
+        <button id="applyFilter">Применить</button>
+    </section>
+
+    <section class="products">
+        <div class="product" data-id="1" data-name="Удочка" data-price="1200" data-category="удочки">
+            <img src="images/rod.jpg" alt="Удочка" class="product-image">
+            <h3 class="product-title">Удочка</h3>
+            <p class="product-description">Прочная удочка для универсальной рыбалки.</p>
+            <p class="product-price">1200 сом</p>
+            <button class="product-button add-to-cart">В корзину</button>
+        </div>
+        <div class="product" data-id="2" data-name="Катушка" data-price="800" data-category="катушки">
+            <img src="images/reel.jpg" alt="Катушка" class="product-image">
+            <h3 class="product-title">Катушка</h3>
+            <p class="product-description">Легкая и надёжная катушка для дальнего заброса.</p>
+            <p class="product-price">800 сом</p>
+            <button class="product-button add-to-cart">В корзину</button>
+        </div>
+        <div class="product" data-id="3" data-name="Приманка" data-price="300" data-category="приманки">
+            <img src="images/lure.jpg" alt="Приманка" class="product-image">
+            <h3 class="product-title">Приманка</h3>
+            <p class="product-description">Эффективная приманка для хищной рыбы.</p>
+            <p class="product-price">300 сом</p>
+            <button class="product-button add-to-cart">В корзину</button>
+        </div>
+    </section>
+    <div class="product" data-id="4" data-name="Черви" data-price="100" data-category="приманки">
+        <img src="images/worms.jpg" alt="Черви" class="product-image">
+        <h3 class="product-title">Черви</h3>
+        <p class="product-description">Живые черви — отличная наживка для любой рыбы.</p>
+        <p class="product-price">100 сом</p>
+        <button class="product-button add-to-cart">В корзину</button>
+    </div>
+    <div class="product" data-id="5" data-name="Опарыши" data-price="80" data-category="приманки">
+        <img src="images/maggots.jpg" alt="Опарыши" class="product-image">
+        <h3 class="product-title">Опарыши</h3>
+        <p class="product-description">Свежие опарыши — уловистая приманка для мирной и хищной рыбы.</p>
+        <p class="product-price">80 сом</p>
+        <button class="product-button add-to-cart">В корзину</button>
+    </div>
+    <div>
+        <command>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Рыболовный магазин</p>
+</footer>
+
+<!-- Модалка описания товара -->
+<div id="productModal" class="modal hidden">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p id="modalPrice"></p>
+        <button id="modalAddToCart">В корзину</button>
+    </div>
+</div>
+
+<!-- Модалка корзины -->
+<div id="cartModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p>Итого: <span id="cart-total">0</span> сом</p>
+        <button id="closeCart">Закрыть</button> 
+    </div>
+</div>
+
+</body>
+</html>
